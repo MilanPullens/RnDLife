@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="Stylesheet.css" rel="stylesheet"></link>
     </head>
     <body>
-        <section>
+        <header>
             <h1>Life<span style="color:red">Q</span></h1>
-        </section>
+            <p>Leuke tekst evt over dit ding</p>
+        </header>
         <section>
-            Choose your gender:
-            <form class="multchoice">
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="male">Male</label><br>
-                <input type="radio" id="female" name="gender" value="female">
-                <label for="female">Female</label><br>
-                <input type="radio" id="other" name="gender" value="other">
-                <label for="other">Other</label>
+            <h2>Deel 1 basic vragen</h2>
+            <p>Choose your gender:</p>
+            <form>
+            <label class="rad-label">
+                <input type="radio" class="rad-input" name="rad">
+                <div class="rad-design"></div>
+                <div class="rad-text">Male</div>
+            </label>
+            <label class="rad-label">
+                <input type="radio" class="rad-input" name="rad">
+                <div class="rad-design"></div>
+                <div class="rad-text">Female</div>
+              </label>
+              <label class="rad-label">
+                <input type="radio" class="rad-input" name="rad">
+                <div class="rad-design"></div>
+                <div class="rad-text">Other</div>
+              </label>
+              <div>
+                  <button>test</button>
+              </div>
             </form>
         </section>
         <section>
-            Choose your country:
+            <p>Choose your country:</p>
             <div class="dropdown">
                 <select id="country" name="country">
                     <option value="Afganistan">Afghanistan</option>
@@ -272,21 +287,41 @@
         </section>
         <section>
             <div class="slidecontainer">
-                <input type="range" min="0" max="100" value="50" step="10" class="slider" id="myRange">
+                <p>Weight:</p>
+                <input type="range" value="70" min="30" max="200" oninput="this.nextElementSibling.value = this.value">
+                <output> 70</output> Kg
           </div>
         </section>
-		<section>
-			How many cigarettes do you smoke a day?
-			<form class="multchoice">
-				<input type="radio" id="not" name="smoke" value="I don't smoke">
-				<label for="not">I don't smoke</label><br>
-				<input type="radio" id="some" name="smoke" value="1-5">
-				<label for="some">1-5</label><br>
-				<input type="radio" id="alot" name="smoke" value="5-25">
-				<label for="alot">5-25</label><br>
-				<input type="radio" id="optie4" name="smoke" value="25+">
-				<label for="optie4">25+</label>
-			</form>
-		</section>
+        <section>
+        <h2>Deel 2 vragen</h2>
+		<p>How many cigarettes do you smoke a day?</p>
+        <form>
+        <div>
+            <label class="rad-label">
+              <input type="radio" class="rad-input" name="rad">
+              <div class="rad-design"></div>
+              <div class="rad-text">I don't smoke</div>
+            </label>
+          
+            <label class="rad-label">
+              <input type="radio" class="rad-input" name="rad">
+              <div class="rad-design"></div>
+              <div class="rad-text">1-5</div>
+            </label>
+          
+            <label class="rad-label">
+              <input type="radio" class="rad-input" name="rad">
+              <div class="rad-design"></div>
+              <div class="rad-text">5-25</div>
+            </label>
+          
+            <label class="rad-label">
+              <input type="radio" class="rad-input" name="rad">
+              <div class="rad-design"></div>
+              <div class="rad-text">25+</div>
+            </label>
+          </div>
+        </form>
+        </section>
     </body>
 </html>

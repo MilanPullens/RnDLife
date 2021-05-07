@@ -1,101 +1,100 @@
-h1	{text-align:center;
-	font-family:Arial, Helvetica, Sans-Serif;
-	}
-    div {
-        height: 200px;
-        width: 400px;
-        background: rgb(255, 255, 255);
-    
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        margin-top: -100px;
-        margin-left: -200px;
-    }
-p	{text-indent:20px;
-	}
-	/* Dropdown Button */
-	.dropbtn {
-		background-color: #ffffff;
-        height: 200px;
-        width: 400px;
-		color: rgb(194, 81, 81);
-		padding: 16px;
-		font-size: 16px;
-		border: none;
-	  }
-	  
-	  /* The container <div> - needed to position the dropdown content */
-	  .dropdown {
-		position: relative;
-		display: inline-block;
-	  }
-	  
-	  /* Dropdown Content (Hidden by Default) */
-	  .dropdown-content {
-		display: none;
-		position: fixed;
-		background-color: #f1f1f1;
-		min-width: 160px;
-		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		z-index: 1;
-	  }
-	  
-	  /* Links inside the dropdown */
-	  .dropdown-content a {
-		color: black;
-		padding: 12px 16px;
-		text-decoration: none;
-		display: block;
-	  }
-	  
-	  /* Change color of dropdown links on hover */
-	  .dropdown-content a:hover {background-color: #ddd;}
-	  
-	  /* Show the dropdown menu on hover */
-	  .dropdown:hover .dropdown-content {display: block;}
-	  
-	  /* Change the background color of the dropdown button when the dropdown content is shown */
-	  .dropdown:hover .dropbtn {background-color: #433e8e;}
+body{text-align:center;
+background-color: #74b4d6;}
+h1{font-size:40px;}
+h2{font-size: \30px;}
+p{font-size: 20px;}  
+/* country dropdown*/
+select {
+  width: 15%;
+  height: 50px;
+  font-size: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: #2c7aad;
+  border: none;
+  border-bottom: 2px solid #2c7aad;
+  color: white;
+  padding: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat:no-repeat;
+  background-position-x:100%;
+  background-position-y:12px;
+}
+/* For IE <= 11 */
+select::-ms-expand {
+  display: none; 
+}
 
-      .slidecontainer {
-        width: 1000px; /* Width of the outside container */
-      }
-      
-      /* The slider itself */
-      .slider {
-        -webkit-appearance: none;  /* Override default CSS styles */
-        appearance: none;
-        width: 1000px; /* Full-width */
-        height: 15px; /* Specified height */
-        border-radius: 5px;  
-        background: #3c539e; /* Grey background */
-        outline: none; /* Remove outline */
-        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-        transition: opacity .2s;
-      }
-      
-      /* Mouse-over effects */
-      .slider:hover {
-        opacity: 1; /* Fully shown on mouse-over */
-      }
-      
-      /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-      .slider::-webkit-slider-thumb {
-        -webkit-appearance: none; /* Override default look */
-        appearance: none;
-        width: 25px; /* Set a specific slider handle width */
-        height: 25px; /* Slider handle height */
-        border-radius: 50%; 
-        background: #ffffff; /* Green background */
-        cursor: pointer; /* Cursor on hover */
-      }
-      
-      .slider::-moz-range-thumb {
-        width: 25px; /* Set a specific slider handle width */
-        height: 25px; /* Slider handle height */
-        background: #000000; /* Green background */
-        cursor: pointer; /* Cursor on hover */
-      }
-    
+/*probeer evt poll verticaal te maken ipv horizontaal */
+.rad-label {
+  display:inline-flex;
+  align-items:center;
+
+  border-radius: 100px;
+  padding: 14px 16px;
+  margin: 10px 0;
+
+  cursor: pointer;
+  transition: .3s;
+}
+
+.rad-label:hover,
+.rad-label:focus-within {
+  background: hsla(0, 0%, 80%, .14);
+}
+
+.rad-input {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.rad-design {
+  width: 20px;
+  height: 22px;
+  border-radius: 100px;
+
+  background: linear-gradient(to right bottom, hsl(154, 97%, 62%), hsl(225, 97%, 62%));
+  position: relative;
+}
+
+.rad-design::before {
+  content: '';
+
+  display: inline-flex;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+
+  background: hsl(0, 0%, 90%);
+  transform: scale(1.1);
+  transition: .3s;
+}
+
+.rad-input:checked+.rad-design::before {
+  transform: scale(0);
+}
+
+.rad-text {
+  color: hsl(0, 6%, 30%);
+  margin-left: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 900;
+
+  transition: .3s;
+}
+
+.rad-input:checked~.rad-text {
+  color: hsl(0, 4%, 5%);
+}
