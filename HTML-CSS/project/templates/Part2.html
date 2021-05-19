@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    </head>
+    <body>
+        <section>
+            <header>
+        <h1>Part 2: Health Questions</h1>
+            </header>
+		<t1>How many cigarettes do you smoke a day?</t1>
+        <form>
+        <div>
+            <label class="rad-label">
+              <input type="radio" class="rad-input" name="rad">
+              <div class="rad-design"></div>
+              <div class="rad-text">I don't smoke</div>
+            </label>
+          
+            <label class="rad-label">
+              <input type="radio" class="rad-input" name="rad">
+              <div class="rad-design"></div>
+              <div class="rad-text">1-5</div>
+            </label>
+          
+            <label class="rad-label">
+              <input type="radio" class="rad-input" name="rad">
+              <div class="rad-design"></div>
+              <div class="rad-text">5-25</div>
+            </label>
+          
+            <label class="rad-label">
+              <input type="radio" class="rad-input" name="rad">
+              <div class="rad-design"></div>
+              <div class="rad-text">25+</div>
+            </label>
+          </div>
+        </form>
+        <div class="button_container">
+            <button class="btn"><span><a href="LifeQ.html" style="text-decoration: none;">Next ></a></span></button>
+          </div>
+        </section>
+    </body>
+</html>
