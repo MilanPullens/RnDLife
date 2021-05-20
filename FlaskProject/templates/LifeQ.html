@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    </head>
+    <body>
+        <header>
+            <h1>Life<span style="color:red">Q</span></h1>
+            <t2 style="font-size: 25px;"><b>Welcome to Life<span style="color:red">Q</span>! 
+              We will determine your life expectancy based on different factors. <br>
+              Please answer all questions below in order to calculate your life expectancy: </b></t2>
+        </header>
+
+        <div class="button_container">
+            <form method="POST" action="/">
+                <button class="btn">
+                <input type="hidden" id="part" name="partID" value="1">
+                <span><a style="text-decoration: none;">Start ></a></span>
+            </button>
+             </form>
+        </div>
+
+    </body>
+</html>
