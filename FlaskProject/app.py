@@ -15,19 +15,12 @@ def process_form():
         if int(input['partID']) == 1:
             return render_template('Part1.html')
         elif int(input['partID']) == 2:
-            global weight
-            weight=input['weightID']
-            global country
-            country=input['country']
-            global gender
-            gender=input['gender']
             return render_template('Part2.html')
         elif int(input['partID']) == 3:
-            global cig
-            cig=input['rad']
-            data()
             return render_template('Part3.html')
-
+        elif int(input['partID']) == 4:
+            return render_template('Part4.html')
+            
     return render_template('LifeQ.html')
 
 
