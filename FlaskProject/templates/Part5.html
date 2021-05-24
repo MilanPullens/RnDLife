@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    </head>
+    <body>
+        <header>
+            <h1>Part 5: Medication question</h1>
+        </header>
+            <form method="POST" action="/">
+                <div class="form-group">
+                    <input type="hidden" id="part" name="partID" value="6">
+                    </div>
+                        <label for="drugs"><t1>How many prescription drugs do you take each day? <span style="color:red">(Optional)</span></t1></label><br>
+                        <input type="number" min=0 max=50 id="drugs" name="drugs" value = ""></input>
+                    </div>
+                    <br>
+                    <br>
+                <div class="button_container">
+                    <button class="btn">
+                        <span><a style="text-decoration: none;">Next ></a></span>
+                </div>
+            </form>
+    </body>
+</html>

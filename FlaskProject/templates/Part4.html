@@ -1,12 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    test
-</body>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    </head>
+    <body>
+        <header>
+            <h1>Part 4: Laboratory questions</h1>
+        </header>
+            <form method="POST" action="/">
+                <div class="form-group">
+                    <input type="hidden" id="part" name="partID" value="5">
+                    </div>
+                        <label for="hemoglobine"><t1>What is your hemoglobine value?(g/dL) <span style="color:red">(Optional)</span></t1></label><br>
+                        <input type="number" min=5 max=25 id="hemoglobine" name="hemoglobine" value = ""></input>
+                    </div>
+                    <br>
+                    </div>
+                        <label for="wbc"><t1>What is your white blood cell count?(100 cells/uL) <span style="color:red">(Optional)</span></t1></label><br>
+                        <input type="number" min=1 max=20 id="wbc" name="wbc" value = ""></input>
+                    </div>
+                    <br>
+                    </div>
+                        <label for="rbc"><t1>What is your red blood cell count?(million cells/uL) <span style="color:red">(Optional)</span></t1></label><br>
+                        <input type="number" min=2 max=8 id="rbc" name="rbc" value = ""></input>
+                    </div>
+                    <br>
+                    <br>
+                <div class="button_container">
+                    <button class="btn">
+                        <span><a style="text-decoration: none;">Next ></a></span>
+                </div>
+            </form>
+    </body>
 </html>

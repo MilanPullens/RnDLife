@@ -5,7 +5,7 @@
     </head>
     <body>
         <header>
-            <h1>Examination questions</h1>
+            <h1>Part 3: Examination questions</h1>
         </header>
             <form method="POST" action="/">
                 <div class="form-group">
@@ -13,21 +13,22 @@
                     <div class="slidecontainer">
                         <t1>How much do you weigh?</t1>
                         <br>
-                        <input type="range" name = "weight" value="70" min="30" max="200" oninput="this.nextElementSibling.value = this.value">
+                        <input type="range" name = "weight" value="70" min="5" max="220" oninput="this.nextElementSibling.value = this.value">
                         <output> 70</output> Kg    
                     </div>
                     <div class="slidecontainer">
                         <t1>What is your height?</t1>
                         <br>
-                        <input type="range" name = "height" value="160" min="130" max="210" oninput="this.nextElementSibling.value = this.value">
-                        <output> 160</output> cm 
+                        <input type="range" name = "height" value="160" min="40" max="210" oninput="this.nextElementSibling.value = this.value">
+                        <output> 140</output> cm 
                     </div>
-                    <label for="heartrate">Resting heartrate (* optional *)</label><br>
-                    <input type="number" min=30 max=120 id="heartrate" name="heartrate"></input>
+                    <label for="heartrate"><t1>What is your resting heartrate? <span style="color:red">(Optional)</span></t1></label><br>
+                    <input type="number" min=30 max=120 id="heartrate" name="heartrate" value = ""></input>
                 </div>
+                <br>
                 <div class="button_container">
                     <button class="btn">
-                        <span><a style="text-decoration: none;">Next</a></span>
+                        <span><a style="text-decoration: none;">Next ></a></span>
                 </div>
             </form>
     </body>

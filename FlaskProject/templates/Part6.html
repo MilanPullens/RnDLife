@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    </head>
+    <body>
+        <header>
+            <h1>Part 6: Questionaire questions</h1>
+        </header>
+            <form method="POST" action="/">
+                <div class="form-group">
+                    <input type="hidden" id="part" name="partID" value="7">
+                    <t1>Have you had, or do you still have cancer?</t1>
+                <br>
+                <label class="rad-label">
+                    <input type="radio" id = "cancer" class="rad-input" type="submit" name= "cancer" value="yes" required>
+                    <div class="rad-design"></div>
+                    <div class="rad-text">Yes</div>
+                </label>
+                <label class="rad-label">
+                    <input type="radio" id = "cancer" class="rad-input" type="submit" name= "cancer"  value = "no">
+                    <div class="rad-design"></div>
+                    <div class="rad-text">No</div>
+                  </label>
+                    <br>
+                    </div>
+                        <label for="sed"><t1>How much minutes of seditaryity do you have each day? <span style="color:red">(Optional)</span></t1></label><br>
+                        <input type="number" min=1 max=300 id="sed" name="sed" value = ""></input>
+                    </div>
+                    <br>
+                    </div>
+                        <label for="ligACT"><t1>How much minutes of ligACT do you have each day? <span style="color:red">(Optional)</span></t1></label><br>
+                        <input type="number" min=1 max=400 id="ligACT" name="ligACT" value = ""></input>
+                    </div>
+                    <br>
+                    </div>
+                        <label for="modACT"><t1>How much minutes of modACT do you have each day? <span style="color:red">(Optional)</span></t1></label><br>
+                        <input type="number" min=1 max=400 id="modACT" name="modACT" value = ""></input>
+                    </div>
+                    <br>
+                    </div>
+                        <label for="vigACT"><t1>How much minutes of vigACT do you have each day? <span style="color:red">(Optional)</span></t1></label><br>
+                        <input type="number" min=1 max=400 id="vigACT" name="vigACT" value = ""></input>
+                    </div>
+                    <br>
+                    </div>
+                        <label for="screen"><t1>How many hours do you spend looking on a screen each day? <span style="color:red">(Optional)</span></t1></label><br>
+                        <input type="number" min=1 max=24 id="screen" name="screen" value = ""></input>
+                    </div>
+                    <br>
+                    <t1>Have you smoked more than 100 cigarettes in your life?</t1>
+                <br>
+                <label class="rad-label">
+                    <input type="radio" id = "smoke" class="rad-input" type="submit" name= "smoke" value="yes" required>
+                    <div class="rad-design"></div>
+                    <div class="rad-text">Yes</div>
+                </label>
+                <label class="rad-label">
+                    <input type="radio" id = "smoke" class="rad-input" type="submit" name= "smoke"  value = "no">
+                    <div class="rad-design"></div>
+                    <div class="rad-text">No</div>
+                  </label>
+                  <br>
+                  </div>
+                        <label for="screen"><t1>How many cigarettes do you smoke each day on average?</t1></label><br>
+                        <input type="number" min=0 max=50 id="cig" name="cig" value = "" required></input>
+                    </div>
+                    <br>
+                    <br>
+                <div class="button_container">
+                    <button class="btn">
+                        <span><a style="text-decoration: none;">Calculate Results ></a></span>
+                </div>
+            </form>
+    </body>
+</html>

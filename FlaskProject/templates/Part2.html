@@ -12,49 +12,11 @@
               <input type="hidden" id="part" name="partID" value="3">
               <t1>How many drinks with alcohol do you consume every week?</t1>
                 <br>
-                <label class="rad-label">
-                    <input type="radio" id = "alcohol" class="rad-input" type="submit" name= "alcohol" value="0-2" required>
-                    <div class="rad-design"></div>
-                    <div class="rad-text">Fewer than 2</div>
-                </label>
-                <label class="rad-label">
-                    <input type="radio" id = "alcohol" class="rad-input" type="submit" name= "alcohol"  value = "3-7">
-                    <div class="rad-design"></div>
-                    <div class="rad-text">3-7</div>
-                  </label>
-                  <label class="rad-label">
-                    <input type="radio" id = "alcohol" class="rad-input" type="submit" name= "alcohol"  value = "8-12">
-                    <div class="rad-design"></div>
-                    <div class="rad-text">8-12</div>
-                  </label>
-                  <label class="rad-label">
-                    <input type="radio" id = "alcohol" class="rad-input" type="submit" name= "alcohol"  value = "12+">
-                    <div class="rad-design"></div>
-                    <div class="rad-text">more than 12</div>
-                  </label>
+                <input type="number" min=0 max=100 id="alcohol" name="alcohol" value = "" required></input>
                   <br>
                   <t1>How many cups of coffee do you consume a day?</t1>
                 <br>
-                <label class="rad-label">
-                    <input type="radio" id = "coffee" class="rad-input" type="submit" name= "coffee" value="0-2" required>
-                    <div class="rad-design"></div>
-                    <div class="rad-text">Fewer than 2</div>
-                </label>
-                <label class="rad-label">
-                    <input type="radio" id = "coffee" class="rad-input" type="submit" name= "coffee"  value = "3-7">
-                    <div class="rad-design"></div>
-                    <div class="rad-text">3-7</div>
-                  </label>
-                  <label class="rad-label">
-                    <input type="radio" id = "coffee" class="rad-input" type="submit" name= "coffee"  value = "8-12">
-                    <div class="rad-design"></div>
-                    <div class="rad-text">8-12</div>
-                  </label>
-                  <label class="rad-label">
-                    <input type="radio" id = "coffee" class="rad-input" type="submit" name= "coffee"  value = "12+">
-                    <div class="rad-design"></div>
-                    <div class="rad-text">more than 12</div>
-                  </label>
+                <input type="number" min=0 max=30 id="coffee" name="coffee" value = "" required></input>
                   <br>
             </div>
           <div class="button_container">
