@@ -4,41 +4,64 @@
       <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
     </head>
     <body>
-        <section>
             <header>
-        <h1>Part 2: Health Questions</h1>
+        <h1>Part 2: Diet Questions</h1>
             </header>
-		<t1>How many cigarettes do you smoke a day?</t1>
-        <form>
-        <div>
-            <label class="rad-label">
-              <input type="radio" class="rad-input" name="rad">
-              <div class="rad-design"></div>
-              <div class="rad-text">I don't smoke</div>
-            </label>
-          
-            <label class="rad-label">
-              <input type="radio" class="rad-input" name="rad">
-              <div class="rad-design"></div>
-              <div class="rad-text">1-5</div>
-            </label>
-          
-            <label class="rad-label">
-              <input type="radio" class="rad-input" name="rad">
-              <div class="rad-design"></div>
-              <div class="rad-text">5-25</div>
-            </label>
-          
-            <label class="rad-label">
-              <input type="radio" class="rad-input" name="rad">
-              <div class="rad-design"></div>
-              <div class="rad-text">25+</div>
-            </label>
-          </div>
-        </form>
-        <div class="button_container">
-            <button class="btn"><span><a href="LifeQ.html" style="text-decoration: none;">Next ></a></span></button>
-          </div>
-        </section>
+            <form method="POST" action="/">
+            <div class="form-group">
+              <input type="hidden" id="part" name="partID" value="3">
+              <t1>How many drinks with alcohol do you consume every week?</t1>
+                <br>
+                <label class="rad-label">
+                    <input type="radio" id = "alcohol" class="rad-input" type="submit" name= "alcohol" value="0-2" required>
+                    <div class="rad-design"></div>
+                    <div class="rad-text">Fewer than 2</div>
+                </label>
+                <label class="rad-label">
+                    <input type="radio" id = "alcohol" class="rad-input" type="submit" name= "alcohol"  value = "3-7">
+                    <div class="rad-design"></div>
+                    <div class="rad-text">3-7</div>
+                  </label>
+                  <label class="rad-label">
+                    <input type="radio" id = "alcohol" class="rad-input" type="submit" name= "alcohol"  value = "8-12">
+                    <div class="rad-design"></div>
+                    <div class="rad-text">8-12</div>
+                  </label>
+                  <label class="rad-label">
+                    <input type="radio" id = "alcohol" class="rad-input" type="submit" name= "alcohol"  value = "12+">
+                    <div class="rad-design"></div>
+                    <div class="rad-text">more than 12</div>
+                  </label>
+                  <br>
+                  <t1>How many cups of coffee do you consume a day?</t1>
+                <br>
+                <label class="rad-label">
+                    <input type="radio" id = "coffee" class="rad-input" type="submit" name= "coffee" value="0-2" required>
+                    <div class="rad-design"></div>
+                    <div class="rad-text">Fewer than 2</div>
+                </label>
+                <label class="rad-label">
+                    <input type="radio" id = "coffee" class="rad-input" type="submit" name= "coffee"  value = "3-7">
+                    <div class="rad-design"></div>
+                    <div class="rad-text">3-7</div>
+                  </label>
+                  <label class="rad-label">
+                    <input type="radio" id = "coffee" class="rad-input" type="submit" name= "coffee"  value = "8-12">
+                    <div class="rad-design"></div>
+                    <div class="rad-text">8-12</div>
+                  </label>
+                  <label class="rad-label">
+                    <input type="radio" id = "coffee" class="rad-input" type="submit" name= "coffee"  value = "12+">
+                    <div class="rad-design"></div>
+                    <div class="rad-text">more than 12</div>
+                  </label>
+                  <br>
+            </div>
+          <div class="button_container">
+            <button class="btn">
+                <span><a style="text-decoration: none;">Next ></a></span>
+        </div>
+      </form>
+
     </body>
 </html>

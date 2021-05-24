@@ -171,3 +171,6 @@ body{text-align:center;
     color: rgb(55, 0, 255);
     font-size: 25px; 
   }
+  .radio-toolbar {
+    margin: 10px;
+  }
