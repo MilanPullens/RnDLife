@@ -2,7 +2,9 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import pandas
-
+import matplotlib.pyplot as plt
+from io import BytesIO
+import base64
 app = Flask(__name__)
 
 gender = ""
@@ -60,7 +62,6 @@ def process_form():
             heartrate = input['heartrate']
             return render_template('Part4.html')
         elif int(input['partID']) == 5:
-            data()
             global hemoglobine
             hemoglobine = input['hemoglobine']
             global wbc 
@@ -89,7 +90,10 @@ def process_form():
             smoke = input['smoke']
             global cig
             cig = input['cig']
-            return render_template('End.html', smoke=smoke)
+            plot_urls=data()
+            plot1=plot_urls[0]
+            plot2=plot_urls[1]
+            return render_template('End.html', smoke=smoke, plot1=plot1, plot2=plot2  )
 
     return render_template('LifeQ.html')
 
@@ -144,8 +148,50 @@ def data():
     #filteredNewData.head(100)
     
     deathrate=(filteredDeathData['Crude Rate'][filteredDeathData['Gender']==gender][filteredDeathData['Single-Year Ages Code']==age]).to_csv(header=None, index=False).rstrip("\r\n")
-    BMI=(int(weight))/(((int(height)/100)*(int(height)/100)))
+    if ((weight and height)!=""):
+        BMI=(int(weight))/(((int(height)/100)*(int(height)/100)))
+    variables=["DR1TKCAL", "BMXBMI"]
+    youG = 1
+    youA = 30.0
+    ages = [youA-5, youA-4, youA-3, youA-2, youA-1, youA, youA+1, youA+2, youA+3, youA+4, youA+5]
+    fig, ax = plt.subplots(figsize=(12,6))
+    names=["Distribution of ", "BMI"]
+    xlabel=["calories", "BMI"]
+    plots=[]
+    you=[2500, BMI]
+    for i in range(len(names)):
+        temp2 = filteredFinalData[variables[i]]
+        #you = temp2.iloc[5]
+        f, axs = plt.subplots(1, 1)
+        axs.hist(x=temp2, bins=100)
+        axs.axvline(x=temp2.mean(), color='RED')
+        axs.axvline(x=you[i], color='GREEN')
+        plt.title(names[i])
+        plt.xlabel(xlabel[i])
+        plt.ylabel("frequency")
+        img=BytesIO()
+        plt.savefig(img, format='png')
+        plots.append(base64.b64encode(img.getvalue()).decode('utf8'))
+        # temp = filteredFinalData.loc[(filteredFinalData['RIAGENDR']== youG) 
+                                #& (filteredFinalData['RIDAGEYR'].isin(ages))] 
+    return plots
     
+
+    
+    '''plt.hist(x=temp2, bins=100)
+    #plt.ylim((None, temp.size/25))
+    plt.axvline(x=temp2.mean(), color='RED')
+    plt.axvline(x=you, color='GREEN')
+    plt.title("Distribution of")
+    ax[0].xlabel("Calories a day")
+    plt.ax[0].ylabel("frequency")
+    img=BytesIO()
+    plt.savefig(img, format='png')
+    count = 0
+    for i in temp2 :
+        if i >= you :
+            count = count + 1
+    print(you,':' ,  round(count/temp2.size*100, 2),'%')'''   
 
 if __name__ == '__main__':
    app.run(debug=True)
