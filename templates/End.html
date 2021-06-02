@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    </head>
+    <body>
+        <header>
+            <h1>Results</h1>
+            <br>
+            <t2 style="font-size: 25px;"><b>Thanks for answering the questions! Here are your results:
+            <br>
+            <br>
+            We predict that your life expectancy is around </b></t2>
+            <br>
+            <br>
+            <h3>{{ LifeExpectancyvalue1 }} - {{ LifeExpectancyvalue2 }}</h3>
+            <t2 style="font-size: 25px;"><b>
+            Years
+            <br>
+            <br>
+            <br>
+            <h1>Feedback</h1>
+            <br>
+            {{ cigfeedback }}
+            <br>
+            <br>
+            {{ drinkfeedback }}
+            <br>
+            <br>
+            {{ healthfeedback }}
+            <br>
+            <br>
+            {{ physfeedback }}
+            <br>
+            <br>
+            {{ bmifeedback }}
+            <br>
+            <br>
+            {{ goodfeedback }}
+            </b></t2>
+            <br>
+            <br>
+            <t2 style="font-size: 25px;"><b>If you want to see extra information about 
+                your life expectancy in terms of graphs, you can choose which graphs you want to display below:</b></t2>
+            <br>
+            <t2 style="font-size: 18px;"> (<span style="color:rgb(0, 255, 21)">|</span> = your value,<span style="color:rgb(255, 2, 2)">|</span> = average value) </t2>
+            <br>
+            <br>
+            <label class="container" for="Alcohol"> <t2>Alcohol</t2>
+            <input type="checkbox" id="Alcohol" name="Alcohol" value="Alcohol" onclick="myFunction1()">
+            <span class="checkmark"></span>
+            </label><br>
+            <label class="container" for="Bmi"> <t2>Bmi</t2>
+            <input type="checkbox" id="Bmi" name="Bmi" value="Bmi" onclick="myFunction2()">
+            <span class="checkmark"></span>
+            </label><br>
+            <label class="container" for="Smoking"> <t2>Smoking</t2>
+            <input type="checkbox" id="Smoking" name="Smoking" value="Smoking" onclick="myFunction3()">
+            <span class="checkmark"></span>
+            </label><br>
+            <label class="container" for="Total activity"> <t2>Total activity</t2>
+            <input type="checkbox" id="Total activity" name="Total activity" value="Total activity" onclick="myFunction4()" >
+            <span class="checkmark"></span>
+            </label><br>
+            <label class="container" for="Expected age"> <t2>Expected age</t2>
+            <input type="checkbox" id="Expected age" name="Expected age" value="Expected age" onclick="myFunction5()" >
+            <span class="checkmark"></span>
+            </label>
+            <br>
+            <br>
+            <div id = "plot1" style="display: none;">
+            <img src="data:image/png;base64, {{ plot1 }}">
+            </div>
+            <div id = "plot2" style="display: none;">
+            <img src="data:image/png;base64, {{ plot2 }}">
+            </div>
+            <div id = "plot3" style="display: none;">
+            <img src="data:image/png;base64, {{ plot3 }}">
+            </div>
+            <div id = "plot4" style="display: none;">
+            <img src="data:image/png;base64, {{ plot4 }}">
+            </div>
+            <div id = "plot5" style="display: none;">
+            <img src="data:image/png;base64, {{ plot5 }}">
+            </div>
+        </header>
+        <script>
+            function myFunction1() {
+                var p1 = document.getElementById("plot1");
+                if (p1.style.display === "none") {
+                p1.style.display = "block";
+                } else {
+                p1.style.display = "none";
+                }
+            }
+            </script>
+        <script>
+            function myFunction2() {
+                var p2 = document.getElementById("plot2");
+                if (p2.style.display === "none") {
+                p2.style.display = "block";
+                } else {
+                p2.style.display = "none";
+                }
+            }
+            </script>
+        <script>
+            function myFunction3() {
+                var p3 = document.getElementById("plot3");
+                if (p3.style.display === "none") {
+                p3.style.display = "block";
+                } else {
+                p3.style.display = "none";
+                }
+            }
+            </script>
+        <script>
+            function myFunction4() {
+                var p4 = document.getElementById("plot4");
+                if (p4.style.display === "none") {
+                p4.style.display = "block";
+                } else {
+                p4.style.display = "none";
+                }
+            }
+            </script>
+        <script>
+            function myFunction5() {
+                var p5 = document.getElementById("plot5");
+                if (p5.style.display === "none") {
+                p5.style.display = "block";
+                } else {
+                p5.style.display = "none";
+                }
+            }
+            </script>
+    </body>
+</html>
